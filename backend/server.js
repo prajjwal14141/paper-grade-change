@@ -10,7 +10,7 @@ app.use(express.json());
 // 1. Connect to MongoDB Atlas
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('✅ Connected to MongoDB Atlas'))
-  .catch(err => console.error('❌ MongoDB Connection Error:', err));
+  .catch(err => console.error(' MongoDB Connection Error:', err));
 
 // 2. Define Schemas
 const machineDataSchema = new mongoose.Schema({
@@ -112,4 +112,4 @@ app.get('/api/command', (req, res) => {
     }
 });
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`🚀 Backend API running on http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`Backend API running on http://localhost:${PORT}`));
