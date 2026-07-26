@@ -3,8 +3,8 @@ import time
 import random
 from datetime import datetime
 
-API_URL = "http://localhost:5000/api/ingest"
-COMMAND_URL = "http://localhost:5000/api/command"
+API_URL = "https://paper-grade-change.onrender.com/api/ingest"
+COMMAND_URL = "https://paper-grade-change.onrender.com/api/command"
 
 state = {
     "target_basis_weight": 80.0,
