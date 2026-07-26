@@ -30,7 +30,7 @@ def move_towards(current, target, step_percentage):
     return current + ((target - current) * step_percentage)
 
 def simulate_factory():
-    print("🏭 Starting Interactive Digital Twin Simulator...")
+    print("Starting Interactive Digital Twin Simulator...")
     
     phase = "NORMAL"
     ticks = random.randint(15, 25)
