@@ -39,7 +39,6 @@ const Feedback = mongoose.model('Feedback', feedbackSchema);
 
 // 3. API Endpoints
 
-// [NEW] Ingestion Endpoint for Live IoT Data
 app.post('/api/ingest', async (req, res) => {
     try {
         const newData = new MachineData(req.body);
@@ -63,7 +62,7 @@ app.get('/api/system-status', async (req, res) => {
 // The Intelligence / Prediction Payload (Still communicates with Python ML service)
 app.get('/api/predictions', async (req, res) => {
     try {
-        const response = await fetch('http://localhost:8000/analyze');
+        const response = await fetch('[https://paper-grade-change-ml-service.onrender.com/analyze](https://paper-grade-change-ml-service.onrender.com/analyze)');
         
         if (!response.ok) {
             throw new Error(`Python ML Service responded with status: ${response.status}`);
@@ -79,10 +78,8 @@ app.get('/api/predictions', async (req, res) => {
 
 
 
-// --- NEW: Command Bridge for Simulator ---
 let simulatorCommand = 'HOLD';
 
-// Update your existing feedback endpoint to set the command
 app.post('/api/feedback', async (req, res) => {
     try {
         const { action } = req.body;
